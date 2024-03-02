@@ -5,7 +5,7 @@ const ampm = document.querySelector("#ampm")
 
 
 const timingFunction = (data, display) => {
-    if (data < 10) {
+    if (data < 12) {
         display.innerText = `0${data}`;
     } else {
         display.innerText = `${data}`;
@@ -13,7 +13,7 @@ const timingFunction = (data, display) => {
 }
 
 const checking = (data) => {
-    if(data < 12){
+    if(!data < 12){
         ampm.innerText = "AM"
     }else{
         ampm.innerText = "PM"
@@ -27,8 +27,7 @@ const startwatch = () => {
         // Getting Hours
         const datehours = new Date();;
         let hourData = datehours.getHours();
-        let minus = hourData - 12
-        timingFunction(minus, hours)
+        timingFunction(hourData, hours)
 
 
         // Getting Minutes
