@@ -13,7 +13,7 @@ const timingFunction = (data, display) => {
 }
 
 const checking = (data) => {
-    if(!data < 12){
+    if(data < 12){
         ampm.innerText = "AM"
     }else{
         ampm.innerText = "PM"
