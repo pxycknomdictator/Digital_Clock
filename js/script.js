@@ -5,7 +5,7 @@ const ampm = document.querySelector("#ampm")
 
 
 const timingFunction = (data, display) => {
-    if (data < 12) {
+    if (data < 10) {
         display.innerText = `0${data}`;
     } else {
         display.innerText = `${data}`;
