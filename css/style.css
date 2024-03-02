@@ -5,7 +5,7 @@
     font-family: sans-serif;
 }
 
-body{
+body {
     width: 100vw;
     height: 80vh;
     background: #e4e4e4;
@@ -34,34 +34,34 @@ body{
     font-weight: 600;
 }
 
-#hour::after{
+#hour::after {
     content: "hr";
     font-size: 1.4rem;
 }
 
-#minute::after{
+#minute::after {
     content: "min";
     font-size: 1.4rem;
 }
 
-#hour{
+#hour {
     color: red;
 }
 
-#minute{
+#minute {
     color: orange;
 }
 
-#second{
+#second {
     color: green;
 }
 
-#second::after{
+#second::after {
     content: "sec";
     font-size: 1.4rem;
 }
 
-p{
+p {
     font-size: 4rem;
     display: flex;
     align-items: end;
@@ -69,25 +69,90 @@ p{
     gap: 0.5rem;
 }
 
-.input-field{
+.input-field {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     place-items: center;
     gap: 1rem;
 }
 
-.btn-shield{
+.btn-shield {
     margin-top: 1rem;
     display: flex;
     align-items: center;
     gap: 1rem;
 }
 
-button:nth-child(2){
+button:nth-child(2) {
     margin-inline: 2rem;
 }
 
-#ampm{
+#ampm {
     font-size: 3rem;
     color: purple;
+}
+
+
+
+@media (max-width: 690px) {
+    html {
+        font-size: 12px;
+    }
+
+    .clockbody {
+        width: 520px;
+    }
+}
+
+
+@media (max-width: 545px) {
+    html {
+        font-size: 12px;
+    }
+
+    .clockbody {
+        width: 480px;
+    }
+}
+
+@media (max-width: 545px) {
+    html {
+        font-size: 12px;
+    }
+
+    .clockbody {
+        width: 480px;
+    }
+}
+
+@media (max-width: 500px) {
+    html {
+        font-size: 10px;
+    }
+
+    .input-field {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        width: 100%;
+        gap: 2rem;
+    }
+    .clockbody {
+        width: 400px;
+    }
+}
+
+@media(max-width: 400px){
+    html{
+        font-size: 8px;
+    }
+
+    .clockbody {
+        width: 200px;
+    }
+    .input-field {
+        grid-template-columns: 1fr;
+        width: 100%;
+        gap: 3rem;
+    }
+
 }
