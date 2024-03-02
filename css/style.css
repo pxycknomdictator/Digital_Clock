@@ -44,21 +44,21 @@ body{
     font-size: 1.4rem;
 }
 
+#hour{
+    color: red;
+}
+
+#minute{
+    color: orange;
+}
+
+#second{
+    color: green;
+}
+
 #second::after{
     content: "sec";
     font-size: 1.4rem;
-}
-
-#start {
-    background: green;
-}
-
-#stop {
-    background: red;
-}
-
-#reset {
-    background: orange;
 }
 
 p{
@@ -71,7 +71,8 @@ p{
 
 .input-field{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    place-items: center;
     gap: 1rem;
 }
 
@@ -84,4 +85,9 @@ p{
 
 button:nth-child(2){
     margin-inline: 2rem;
+}
+
+#ampm{
+    font-size: 3rem;
+    color: purple;
 }

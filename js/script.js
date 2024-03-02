@@ -1,32 +1,49 @@
 const hours = document.querySelector("#hour")
 const minutes = document.querySelector("#minute")
 const seconds = document.querySelector("#second")
+const ampm = document.querySelector("#ampm")
 
+
+const timingFunction = (data, display) => {
+    if (data < 10) {
+        display.innerText = `0${data}`;
+    } else {
+        display.innerText = `${data}`;
+    }
+}
+
+const checking = (data) => {
+    if(data < 12){
+        ampm.innerText = "AM"
+    }else{
+        ampm.innerText = "PM"
+    }
+}
 
 const startwatch = () => {
 
     setInterval(() => {
+
         // Getting Hours
         const datehours = new Date();;
         let hourData = datehours.getHours();
-        hours.innerText = hourData;
+        let minus = hourData - 12
+        timingFunction(minus, hours)
+
 
         // Getting Minutes
         const dataminutes = new Date();;
         let minuteData = dataminutes.getMinutes();
-        minutes.innerText = minuteData;
+        timingFunction(minuteData, minutes)
+        
 
         // Getting Seconds
         const dateSecond = new Date();;
         let secondData = dateSecond.getSeconds();
+        timingFunction(secondData, seconds)
 
-        if (secondData < 10) {
-            seconds.innerText = `0${secondData}`;
-        } else {
-            seconds.innerText = `${secondData}`;
-        }
+        checking(hourData)
 
-        
     }, 1000)
 
 }
