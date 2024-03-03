@@ -5,19 +5,15 @@ const ampm = document.querySelector("#ampm")
 
 
 const timingFunction = (data, display) => {
-    if (data < 10) {
-        display.innerText = `0${data}`;
-    } else {
-        display.innerText = `${data}`;
-    }
+    (data < 10) ? display.innerText = `0${data}` : display.innerText = `${data}`
+}
+
+const hourtimingFunction = (data, display) => {
+    (data > 12) ? display.innerText = `0${data - 12}` : display.innerText = `${data}`
 }
 
 const checking = (data) => {
-    if(data < 12){
-        ampm.innerText = "AM"
-    }else{
-        ampm.innerText = "PM"
-    }
+    (data < 12) ? ampm.innerText = "AM" : ampm.innerText = "PM"
 }
 
 const startwatch = () => {
@@ -25,19 +21,17 @@ const startwatch = () => {
     setInterval(() => {
 
         // Getting Hours
-        const datehours = new Date();;
+        const datehours = new Date();
         let hourData = datehours.getHours();
-        timingFunction(hourData, hours)
-
+        hourtimingFunction(hourData, hours)
 
         // Getting Minutes
-        const dataminutes = new Date();;
+        const dataminutes = new Date();
         let minuteData = dataminutes.getMinutes();
         timingFunction(minuteData, minutes)
-        
 
         // Getting Seconds
-        const dateSecond = new Date();;
+        const dateSecond = new Date();
         let secondData = dateSecond.getSeconds();
         timingFunction(secondData, seconds)
 
