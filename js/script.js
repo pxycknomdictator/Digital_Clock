@@ -9,7 +9,14 @@ const timingFunction = (data, display) => {
 }
 
 const hourtimingFunction = (data, display) => {
-    (data > 12) ? display.innerText = `0${data - 12}` : display.innerText = `${data}`
+    if (data > 12) {
+        display.innerText = `0${data - 12}`
+    } else if (data < 10) {
+        display.innerText = `0${data}`
+    } else {
+        display.innerText = `${data}`
+    }
+
 }
 
 const checking = (data) => {
